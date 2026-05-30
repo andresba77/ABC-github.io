@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Carrito de Compras</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+
+<h1>Cinemax Aserrí</h1>
+
+<p class="eslogan">
+Vive la mejor experiencia de cine
+</p>
+
+<nav>
+<a href="index.html">Inicio</a>
+<a href="cartelera.html">Cartelera</a>
+<a href="dulceria.html">Dulcería</a>
+<a href="salas.html">Salas</a>
+<a href="boleteria.html">Boletería</a>
+<a href="contactos.html">Contactos</a>
+<a href="pagos.html">Métodos de Pago</a>
+<a href="login.html">Login</a>
+<a href="factura.html">Factura</a>
+<a href="carrito.html">Carrito</a>
+<a href="reservas.html">Reservas</a>
+</nav>
+
+</header>
+
+<section>
+
+<h2 class="titulo">
+Carrito de Compras
+</h2>
+
+<form class="formulario">
+
+<h3>Película</h3>
+
+<select>
+<option>John Wick - IMAX - ₡5000</option>
+<option>Avatar - 3D - ₡4500</option>
+<option>Frozen - Infantil - ₡3000</option>
+<option>Matrix - VIP - ₡6000</option>
+</select>
+
+<label>Cantidad de entradas:</label>
+<input type="number" min="1" max="10">
+
+<h3>Dulcería</h3>
+
+<div class="opciones">
+
+<input type="checkbox">
+<label>Palomitas Grandes - ₡2500</label>
+
+<input type="checkbox">
+<label>Nachos - ₡3000</label>
+
+<input type="checkbox">
+<label>Hot Dog - ₡2800</label>
+
+<input type="checkbox">
+<label>Combo Familiar - ₡7000</label>
+
+<input type="checkbox">
+<label>Refresco Grande - ₡1800</label>
+
+</div>
+
+<h3>Método de Pago</h3>
+
+<input type="radio" name="pago">
+<label>Tarjeta</label>
+
+<input type="radio" name="pago">
+<label>Efectivo</label>
+
+<input type="radio" name="pago">
+<label>PayPal</label>
+
+<h3>Resumen del Pedido</h3>
+
+<table class="tabla">
+
+<tr>
+<th>Concepto</th>
+<th>Precio</th>
+</tr>
+
+<tr>
+<td>Entrada seleccionada</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Combo seleccionado</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Total aproximado</td>
+<td></td>
+</tr>
+
+</table>
+
+<div class="acciones">
+
+<button type="submit">
+Actualizar Pedido
+</button>
+
+<a href="pagos.html">
+<button type="button">
+Proceder al Pago
+</button>
+</a>
+
+</div>
+
+</form>
+
+</section>
+
+</body>
+</html>
