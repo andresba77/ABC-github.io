@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cines Aserrí - Inicio y Servicios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Requerimiento: Marquesina con la película en estreno y promo 2x1 con vigencia de una semana -->
+    <div class="marquesina">
+        🎬 ¡Estreno de la Semana: Duna! Gran promoción de 2 x 1 en boletería (Vigencia de una semana)
+    </div>
+
+    <!-- Requerimiento: Menú Principal horizontal en la parte superior -->
+    <header>
+        <div class="nav-container">
+            <!-- Al dar clic en el logo o en Inicio, se redirecciona al Menú Principal -->
+            <a href="index.html" class="logo">🎬 Cinemax Aserrí / Cinepolis Aserrí</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Inicio</a></li>
+                    <li><a href="cartelera.html">Cartelera</a></li>
+                    <li><a href="index.html#dulceria">Dulcería</a></li>
+                    <li><a href="salas.html">Salas</a></li>
+                    <li><a href="index.html#boleteria">Boletería</a></li>
+                    <li><a href="index.html#contactos">Contactos</a></li>
+                    <li><a href="index.html#metodos-pago">Métodos de Pago</a></li>
+                    <li><a href="index.html#login" class="btn-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN: HOME / INICIO -->
+        <section id="home" class="section-box">
+            <h2>Inicio</h2>
+            <p>Bienvenido al sistema simulador de Cinemax Aserrí / Cinepolis Aserrí. Disfrute de nuestra cartelera y dulcería con beneficios exclusivos.</p>
+            
+            <!-- Requerimiento: Carrusel con el top 5 de las películas en cartelera -->
+            <h3>🔥 Top 5 Películas en Cartelera</h3>
+            <div class="grid-container">
+                <div class="card card-top"><h4>⭐️ 1. El Exorcista</h4><p>Género: Terror</p></div>
+                <div class="card card-top"><h4>⭐️ 2. Ted</h4><p>Género: Comedia</p></div>
+                <div class="card card-top"><h4>⭐️ 3. Titanic</h4><p>Género: Drama</p></div>
+                <div class="card card-top"><h4>⭐️ 4. John Wick</h4><p>Género: Acción</p></div>
+                <div class="card card-top"><h4>⭐️ 5. Matrix</h4><p>Género: Ciencia Ficción</p></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: DULCERÍA (Opciones y sub-opciones estructuradas en Tarjetas) -->
+        <section id="dulceria" class="section-box">
+            <h2>Dulcería</h2>
+            <p class="instruccion">Las categorías y el detalle de los productos de dulcería disponibles en el punto de venta:</p>
+            
+            <div class="grid-container">
+                <div class="card">
+                    <h4>1. Palomitas</h4>
+                    <ul>
+                        <li>Caramelo</li>
+                        <li>Mantequilla</li>
+                        <li>Mixtas</li>
+                        <li>Queso</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>2. Hot Dog</h4>
+                    <ul>
+                        <li>Arreglado</li>
+                        <li>Sencillo</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>3. Nachos</h4>
+                    <ul>
+                        <li>Big Nacho</li>
+                        <li>Super Nacho</li>
+                        <li>Petit</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>4. Refrescos</h4>
+                    <ul>
+                        <li>Coca Cola</li>
+                        <li>Pepsi</li>
+                        <li>Tropical</li>
+                        <li>Agua Mineral</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>5. Snacks Adicionales</h4>
+                    <ul>
+                        <li>Chocolates</li>
+                        <li>Galletas</li>
+                        <li>Helados</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: BOLETERÍA -->
+        <section id="boleteria" class="section-box">
+            <h2>Boletería (Reserva Anticipada)</h2>
+            <div class="card form-container">
+                <p class="instruccion">* El precio de cada película está condicionado a la sala de proyección. El boleto incrementa su valor en un 25% si se elige formato 3D (2D general es el más económico e IMAX el más costoso).</p>
+                <form>
+                    <div class="form-group">
+                        <label>Seleccionar Película:</label>
+                        <select>
+                            <option>El Exorcista (Terror)</option>
+                            <option>Ted (Comedia)</option>
+                            <option>Titanic (Drama)</option>
+                            <option>John Wick (Acción)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sala / Ubicación Disponible:</label>
+                        <select>
+                            <option>Terramall</option>
+                            <option>Multiplaza Escazú</option>
+                            <option>Multiplaza Zapote</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tecnología de Proyección:</label>
+                        <select>
+                            <option>General 2D (Económico)</option>
+                            <option>Proyección 3D (+25% sobre costo base)</option>
+                            <option>IMAX (Costoso / Premium)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Cantidad de Boletos:</label>
+                        <input type="number" min="1" value="1">
+                    </div>
+                    <button type="button" class="btn-action">Simular Compra y Reserva</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CONTACTOS -->
+        <section id="contactos" class="section-box">
+            <h2>Contactos</h2>
+            <div class="card form-container">
+                <p>Formulario de consultas al Cinema (Campos obligatorios requeridos):</p>
+                <form>
+                    <div class="form-group">
+                        <label>Nombre Completo:</label>
+                        <input type="text" required placeholder="Ej. Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" required placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Número de Teléfono o Celular:</label>
+                        <input type="tel" required placeholder="+506 8888-8888">
+                    </div>
+                    <div class="form-group">
+                        <label>Consulta:</label>
+                        <textarea rows="4" required placeholder="Escriba aquí los detalles de su consulta..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-action">Enviar Formulario de Consulta</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MÉTODOS DE PAGO -->
+        <section id="metodos-pago" class="section-box">
+            <h2>Métodos de Pago</h2>
+            <div class="card">
+                <p>El sistema soporta la selección de los siguientes métodos de pago preferidos:</p>
+                <ol class="lista-pagos">
+                    <li>Efectivo</li>
+                    <li>Tarjeta de crédito</li>
+                    <li>Tarjeta de débito</li>
+                    <li>Transferencia bancaria</li>
+                    <li>Billetera digital (PayPal, Apple Pay, Google Pay)</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: REGISTRO DE USUARIO / LOGIN -->
+        <section id="login" class="section-box">
+            <h2>Registro de Usuario / Login</h2>
+            <div class="card form-container">
+                <div class="form-header-login">
+                    <strong>Formato de ingreso: Cinepolis Aserrí</strong>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label>Usuario (Correo):</label>
+                        <input type="text" placeholder="nombreusuario">
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña:</label>
+                        <input type="password" placeholder="••••••••">
+                    </div>
+                    <p class="nota-seguridad">⚠️ Máximo de tres intentos fallidos antes de bloquear temporalmente la cuenta.</p>
+                    <button type="button" class="btn-action">Iniciar Sesión</button>
+                </form>
+                <div class="login-links">
+                    <a href="#">Recuperación de contraseña mediante correo electrónico</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Requerimiento: Pie de página con ubicación del cine(mapa), datos generales (teléfono, redes sociales) y derechos reservados -->
+    <footer>
+        <p>📍 <strong>Ubicación del Cine:</strong> Aserrí, San José, Costa Rica (Ver Ubicación de Mapa)</p>
+        <p>📞 <strong>Teléfono:</strong> +506 2200-8888 | 🌐 <strong>Redes Sociales:</strong> @CinesAserriOficial</p>
+        <p>&copy; 2026 Cines Aserrí. Todos los derechos reservados. Interfaz Inclusiva, Accesible y Consistente.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+/* ==========================================================================
+   1. VARIABLES, REQUERIMIENTOS CROMÁTICOS Y ACCESIBILIDAD
+   ========================================================================== */
+html {
+    scroll-behavior: smooth; /* Permite navegación fluida entre anclajes */
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Tipografía limpia regulada */
+    margin: 0;
+    padding: 0;
+    background-color: #f8fafc; /* Fondo neutro claro */
+    color: #0f172a; /* Alto contraste para legibilidad */
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. MARQUESINA DE ESTRENO CON ANIMACIÓN CONTINUA (CSS PURO)
+   ========================================================================== */
+.marquesina {
+    background-color: #ffb300; /* Color Secundario de la marca (Ámbar) */
+    color: #000000;            /* Máximo contraste accesible */
+    padding: 12px 0;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 3px solid #d99600;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden; 
+    white-space: nowrap; 
+    position: relative;
+    width: 100%;
+}
+
+.marquesina span {
+    display: inline-block;
+    padding-left: 100%; 
+    animation: moverMarquesina 25s linear infinite; /* Bucle infinito */
+}
+
+@keyframes moverMarquesina {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* ==========================================================================
+   3. MENÚ PRINCIPAL HORIZONTAL (STICKY) Y LOGOTIPO
+   ========================================================================== */
+header {
+    background-color: #0d47a1; /* Color Primario de la marca (Azul Corporativo) */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+}
+
+/* Contenedor del logotipo e imagen */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13.5px;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #ffb300 !important; /* Resalte armónico e intuitivo */
+}
+
+.btn-carrito {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.btn-login {
+    background-color: #ffb300;
+    color: #000000 !important;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   4. BLOQUES DE CONTENIDO Y MAQUETACIÓN EN CUADRÍCULA (GRID)
+   ========================================================================== */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.section-box {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 35px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-top: 4px solid #0d47a1; /* Consistencia de marca */
+}
+
+h2 {
+    color: #0d47a1;
+    margin-top: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+h3 {
+    color: #334155;
+    margin-top: 25px;
+    background-color: #f1f5f9;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.instruccion {
+    color: #64748b;
+    font-style: italic;
+    font-size: 13.5px;
+}
+
+/* Contenedor Grid adaptable a dispositivos móviles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+/* ==========================================================================
+   5. DISEÑO DE TARJETAS (CARDS) E IMÁGENES EN LÍNEA VIA CDN URL
+   ========================================================================== */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 0 0 15px 0; 
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilo para las portadas de películas e imágenes en línea */
+.card-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover; /* Adapta la imagen sin distorsionarla */
+    background-color: #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Contenedor interno del texto de las tarjetas */
+.card-info {
+    padding: 12px 15px 0 15px;
+}
+
+.card-info h4 {
+    margin: 0 0 6px 0;
+    color: #0d47a1;
+    font-size: 15px;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #475569;
+}
+
+.card-top {
+    border: 2px solid #ffb300; /* Resalte para películas Top 5 */
+}
+
+.card ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+.card ul li {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.lista-pagos li {
+    margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   6. COMPONENTES DE FORMULARIOS
+   ========================================================================== */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 13.5px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 13.5px;
+    font-family: inherit;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #0d47a1;
+}
+
+.btn-action {
+    background-color: #0d47a1;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 13.5px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #0a377d;
+}
+
+.form-header-login {
+    text-align: center;
+    background-color: #f8fafc;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 13.5px;
+}
+
+.nota-seguridad {
+    font-size: 12px;
+    color: #dc2626;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.login-links {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.login-links a {
+    font-size: 12.5px;
+    color: #0d47a1;
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   7. DISEÑO DE FACTURA Y TIQUETE ELECTRÓNICO SIMULADO
+   ========================================================================== */
+.factura-container {
+    background-color: #f8fafc;
+    border: 2px dashed #cbd5e1; /* Imita el corte del papel de caja */
+    padding: 20px;
+    max-width: 420px;
+    margin: 20px auto;
+    font-family: 'Courier New', Courier, monospace; /* Tipografía de tiquete térmico */
+    color: #1e293b;
+}
+
+.factura-header {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.factura-header h3 {
+    background: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #0f172a;
+}
+
+.factura-header p { margin: 3px 0; }
+.factura-detalle p { margin: 10px 0 2px 0; font-size: 13.5px; }
+
+.factura-linea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.nota-desglose {
+    font-size: 11px;
+    color: #64748b;
+    margin: 0 0 10px 0 !important;
+    font-style: italic;
+}
+
+.descuento-cliente {
+    color: #16a34a; /* Tono verde para el ahorro */
+    font-weight: bold;
+}
+
+.total-pagar {
+    font-size: 15px;
+    font-weight: bold;
+    border-top: 1px solid #0f172a;
+    padding-top: 8px;
+    margin-top: 8px;
+    color: #0d47a1;
+}
+
+.factura-pago-seleccionado {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #cbd5e1;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+}
+
+.radio-pago {
+    display: inline-block;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.btn-pagar {
+    margin-top: 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ==========================================================================
+   8. PIE DE PÁGINA (CONTRASTE OSCURO CON ACENTO)
+   ========================================================================== */
+footer {
+    background-color: #1e293b; 
+    color: #cbd5e1;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 13px;
+    border-top: 4px solid #ffb300; 
+}
+
+footer strong {
+    color: #ffffff;
+}
